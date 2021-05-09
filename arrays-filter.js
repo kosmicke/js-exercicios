@@ -3,7 +3,9 @@
 const ex1 = () => {
   const lista = [10, 0, 9, 1, 8, 2, 7, 3, 6, 4, 5];
 
-  const novaLista = []; // Substitua pelo seu código
+  const novaLista = lista.filter((item) => {
+    return item >= 5;
+  });
 
   console.log("ex1", novaLista);
 };
@@ -14,7 +16,9 @@ ex1();
 const ex2 = () => {
   const lista = [10, 0, 9, 1, 8, 2, 7, 3, 6, 4, 5];
 
-  const novaLista = []; // Substitua pelo seu código
+  const novaLista = lista.filter((item) => {
+    return item % 2 == 0;
+  });
 
   console.log("ex2", novaLista);
 };
@@ -26,7 +30,9 @@ ex2();
 const ex3 = () => {
   const lista = [10, 0, 9, 1, 8, 2, 7, 3, 6, 4, 5];
 
-  const novaLista = []; // Substitua pelo seu código
+  const novaLista = lista.filter((item) => {
+    return item % 2 == 0 && item > 5;
+  });
 
   console.log("ex3", novaLista);
 };
@@ -34,11 +40,13 @@ ex3();
 
 // EX 04 -> Crie um novo array a partir do array 'lista',
 // que contenha somente os elementos que são números ímpares
-// ou que são iguais ou menores que 5.
+// ou que são menores ou iguais a 5.
 const ex4 = () => {
   const lista = [10, 0, 9, 1, 8, 2, 7, 3, 6, 4, 5];
 
-  const novaLista = []; // Substitua pelo seu código
+  const novaLista = lista.filter((item) => {
+    return item % 2 != 0 || item <= 5;
+  });
 
   console.log("ex4", novaLista);
 };
@@ -49,7 +57,9 @@ ex4();
 const ex5 = () => {
   const lista = ["Banana", "Laranja", "Maçã", "Manga"];
 
-  const novaLista = []; // Substitua pelo seu código
+  const novaLista = lista.filter((item) => {
+    return item.includes("n");
+  });
 
   console.log("ex5", novaLista);
 };
@@ -60,19 +70,23 @@ ex5();
 const ex6 = () => {
   const lista = ["Banana", "Laranja", "Maçã", "Manga"];
 
-  const novaLista = []; // Substitua pelo seu código
+  const novaLista = lista.filter((item) => {
+    return item.length > 5;
+  });
 
   console.log("ex6", novaLista);
 };
 ex6();
 
 // EX 07 -> Crie um novo array a partir do array 'lista',
-// somente com os elementos que possuem a letra 'n' mas que não seja
-// na terceira posição.
+// somente com os elementos que possuem a letra 'n', mas que o 'n' não seja
+// na terceira posição da string.
 const ex7 = () => {
   const lista = ["Banana", "Laranja", "Maçã", "Manga"];
 
-  const novaLista = []; // Substitua pelo seu código
+  const novaLista = lista.filter((item) => {
+    return item.includes("n") && item[2] != "n";
+  });
 
   console.log("ex7", novaLista);
 };
@@ -89,7 +103,12 @@ const ex8 = () => {
     { nome: "Manga", qtd: 200, emPromo: true },
   ];
 
-  const novaLista = []; // Substitua pelo seu código
+  const novaLista = lista.filter((item) => {
+    const nomeTemN = item.nome.includes("n");
+    const qtdSupre = item.qtd >= 200;
+
+    return nomeTemN && qtdSupre;
+  });
 
   console.log("ex8", novaLista);
 };
@@ -98,15 +117,17 @@ ex8();
 // EX 09 -> Crie um novo array a partir do array 'lista',
 // somente com os elementos que estão em promoção.
 const ex9 = () => {
-    const lista = [
-      { nome: "Banana", qtd: 210, emPromo: false },
-      { nome: "Laranja", qtd: 50, emPromo: true },
-      { nome: "Maçã", qtd: 130, emPromo: false },
-      { nome: "Manga", qtd: 200, emPromo: true },
-    ];
-  
-    const novaLista = []; // Substitua pelo seu código
-  
-    console.log("ex9", novaLista);
-  };
-  ex9();
+  const lista = [
+    { nome: "Banana", qtd: 210, emPromo: false },
+    { nome: "Laranja", qtd: 50, emPromo: true },
+    { nome: "Maçã", qtd: 130, emPromo: false },
+    { nome: "Manga", qtd: 200, emPromo: true },
+  ];
+
+  const novaLista = lista.filter((item) => {
+    return item.emPromo;
+  });
+
+  console.log("ex9", novaLista);
+};
+ex9();

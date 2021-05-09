@@ -67,8 +67,8 @@ const ex6 = () => {
 ex6();
 
 // EX 07 -> Crie um novo array a partir do array 'lista',
-// somente com os elementos que possuem a letra 'n' mas que não seja
-// na terceira posição.
+// somente com os elementos que possuem a letra 'n', mas que a letra 'n' não seja
+// na terceira posição da string.
 const ex7 = () => {
   const lista = ["Banana", "Laranja", "Maçã", "Manga"];
 
